@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite" thread-count="3" parallel="classes">
+    <listeners>
+        <listener class-name="com.automation.TestNGListener"></listener>
+    </listeners>
+    <test name="Test1">
+        <parameter name="URL" value="http://www.amazon.co.uk"></parameter>
+        <packages>
+            <package name="com.automation.testNG"/>
+        </packages>
+    </test> <!-- Test -->
+
+   <!-- <test name="Test2">
+        <parameter name="URL" value="http://www.amazon.co.uk"></parameter>
+        <groups>
+            <run>
+                <include name="myTest"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="com.automation.test"></package>
+        </packages>
+    </test>-->
+</suite> <!-- Suite -->
