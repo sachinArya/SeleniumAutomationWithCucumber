@@ -4,9 +4,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-
-import org.openqa.selenium.WebDriver;
-
 public class loginAmazon_stepdef  {
 
     CucumberContext context;
@@ -19,7 +16,6 @@ public class loginAmazon_stepdef  {
     @Given("User is on {string}")
     public void navigate_to_url(String url) throws Exception
     {
-        //context.driver = DriverSetup.getDriver();
         context.driver.navigate().to(url);
     }
 

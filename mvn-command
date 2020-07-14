@@ -1,0 +1,2 @@
+cd "C:\SeleniumAutomationWithCucumber"
+mvn test -Dcucumber.execution.dry-run=false -Dcucumber.filter.tags="@searchProduct and not @login"

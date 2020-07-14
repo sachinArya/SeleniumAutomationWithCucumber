@@ -20,7 +20,7 @@ public class searchProduct_stepdef {
 
     @When("user enters the {string} in searchbox and click search")
     public void enter_product_name_in_searchbox(String product) throws Exception {
-        context.driver.navigate().to("https://www.amazon.co.uk");
+        //context.driver.navigate().to("https://www.amazon.co.uk");
         com.automation.pom.LandingPage.enterProductNameToSearch(context.driver,product);
     }
 
