@@ -14,13 +14,13 @@ public class FindElement {
     public static WebElement findElement(WebDriver driver,By by) throws Exception
     {
         WebDriverWait o_wait = new WebDriverWait(driver,120);
-        return o_wait.until(ExpectedConditions.elementToBeClickable(by));
+        return o_wait.until(ExpectedConditions.presenceOfElementLocated(by));
     }
 
     public static List<WebElement> findElements(WebDriver driver,By by) throws Exception
     {
         WebDriverWait o_wait = new WebDriverWait(driver,120);
-        o_wait.until(ExpectedConditions.elementToBeClickable(by));
+        o_wait.until(ExpectedConditions.presenceOfElementLocated(by));
 
         return driver.findElements(by);
     }

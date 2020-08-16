@@ -13,11 +13,22 @@ public class Utils {
         return sdf.format(timestamp);
     }
 
-    public static void createTestReportFolder() throws Exception
-    {
+    public static String createTestReportFolder() throws Exception {
         String path = System.getProperty("user.dir") + "//Results//" + getCurrentTimeStamp();
-        new File(path).mkdirs();
-        new File(path + "//ScreenShots").mkdirs();
-        new File(path + "//logs").mkdirs();
+        File mainFolder = new File(path);
+        if (!mainFolder.exists()) {
+            if (mainFolder.mkdir()) {
+                new File(path + "//ScreenShots").mkdirs();
+                new File(path + "//logs").mkdirs();
+                return path;
+            } else {
+                return null;
+            }
+        }
+        else
+        {
+            return path;
+        }
+
     }
 }

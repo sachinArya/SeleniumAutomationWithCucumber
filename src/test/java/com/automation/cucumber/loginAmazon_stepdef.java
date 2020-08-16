@@ -1,5 +1,6 @@
 package com.automation.cucumber;
 
+import com.automation.pom.TopMenu;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -10,6 +11,7 @@ public class loginAmazon_stepdef  {
 
     public loginAmazon_stepdef(CucumberContext context)
     {
+        System.out.println("************** context constructor ********************");
         this.context= context;
     }
 
@@ -21,7 +23,7 @@ public class loginAmazon_stepdef  {
 
     @When("user enter user name as {string}")
     public void enterUserName(String userName) throws Exception {
-       com.automation.pom.LandingPage.clickSignIn(context.driver);
+       TopMenu.clickSignIn(context.driver);
        com.automation.pom.Login.enterUserName(context.driver,userName);
     }
 
@@ -34,6 +36,7 @@ public class loginAmazon_stepdef  {
     @Then("User is unable to login successfully")
     public void clickSignIn() throws Exception {
         com.automation.pom.Login.clickLogin(context.driver);
+        //Assert.assertTrue(false,"test failed here");
     }
 
 
