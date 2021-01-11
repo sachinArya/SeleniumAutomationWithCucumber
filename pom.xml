@@ -40,7 +40,7 @@
     </build>
 
     <properties>
-        <cucumber.version>5.5.0</cucumber.version>
+        <cucumber.version>6.9.0</cucumber.version>
     </properties>
 
     <dependencies>
@@ -73,12 +73,40 @@
           <version>${cucumber.version}</version>
         </dependency>
 
-      <dependency>
+        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-core -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-core</artifactId>
+            <version>${cucumber.version}</version>
+        </dependency>
+
+
+        <dependency>
           <groupId>io.cucumber</groupId>
           <artifactId>cucumber-picocontainer</artifactId>
           <version>${cucumber.version}</version>
       </dependency>
 
+        <!-- https://mvnrepository.com/artifact/io.cucumber/gherkin -->
+        <!-- https://mvnrepository.com/artifact/io.cucumber/gherkin -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>gherkin</artifactId>
+            <version>16.0.0</version>
+        </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-gherkin -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-gherkin</artifactId>
+            <version>${cucumber.version}</version>
+        </dependency>
+
+        <!-- Thanks for using https://jar-download.com -->
+
+
+        <!--_____________________________cucumber dependencies end _______________________________-->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
@@ -91,6 +119,7 @@
             <artifactId>guava</artifactId>
             <version>25.0-jre</version>
         </dependency>
+
 
         <dependency>
             <groupId>com.google.code.gson</groupId>

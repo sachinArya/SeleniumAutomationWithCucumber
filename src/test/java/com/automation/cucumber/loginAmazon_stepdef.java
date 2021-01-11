@@ -1,5 +1,6 @@
 package com.automation.cucumber;
 
+import com.automation.cucumber.CucumberContext;
 import com.automation.pom.TopMenu;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -18,6 +19,7 @@ public class loginAmazon_stepdef  {
     @Given("User is on {string}")
     public void navigate_to_url(String url) throws Exception
     {
+        System.out.println("Step Started!");
         context.driver.navigate().to(url);
     }
 

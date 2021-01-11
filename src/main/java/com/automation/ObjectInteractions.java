@@ -12,16 +12,17 @@ public class ObjectInteractions {
     public static void enterKeys(WebDriver driver,WebElement element, String keys) throws Exception{
         moveToElement(driver,element);
         element.sendKeys(keys);
-       /* System.out.println("element = " + element.getText());
-            if (!(element.getText().equalsIgnoreCase(keys)))
-                throw new Exception("Value not entered properly");
-
-        */
     }
 
     public static void click(WebDriver driver,WebElement element) throws Exception{
         moveToElement(driver,element);
         element.click();
+    }
+
+    public static void jsClick(WebDriver driver,WebElement element) throws Exception{
+        moveToElement(driver,element);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click()",element);
     }
 
     public static void moveToElement(WebDriver driver, WebElement element) throws Exception

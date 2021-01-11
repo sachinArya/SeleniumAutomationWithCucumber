@@ -5,6 +5,7 @@ import com.automation.Snapshot;
 import com.automation.Utils;
 import io.cucumber.java.Before;
 import io.cucumber.java.After;
+import io.cucumber.java.BeforeStep;
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.WebDriver;
 
@@ -13,12 +14,13 @@ import java.util.HashMap;
 
 public class CucumberContext {
 
-    WebDriver driver;
-    HashMap<String, Object> parameters;
+    public WebDriver driver;
+    public HashMap<String, Object> parameters;
 
     @Before
-    public void setDriver()
+    public void setDriver(Scenario scenario)
     {
+
         this.driver = DriverSetup.getDriver();
     }
 
@@ -41,5 +43,11 @@ public class CucumberContext {
 
     public Object getParameters(String key) {
         return parameters.get(key);
+    }
+
+    @BeforeStep
+    public void validateClockMovement(Scenario scenario) throws Exception{
+
+        System.out.println("Execution before step!!");
     }
 }
